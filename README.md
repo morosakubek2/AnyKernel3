@@ -35,7 +35,7 @@ __do.devicecheck=1__ specified requires at least device.name1 to be present. Thi
 
 __do.modules=1__ will push the .ko contents of the modules directory to the same location relative to root (/) and apply correct permissions. On A/B devices this can only be done to the active slot.
 
-__do.systemless=1__ (with __do.modules=1__) will instead push the full contents of the modules directory to create a simple "ak3-helper" Magisk module, allowing developers to effectively replace system files, including .ko files. If the current kernel is changed then the kernel helper module automatically removes itself to prevent conflicts.
+__do.systemless=1__ (with __do.modules=1__) will instead push the full contents of the modules directory to create a simple "ak3-helper" Magisk/KernelSU module, allowing developers to effectively replace system files, including .ko files. If the current kernel is changed then the kernel helper module automatically removes itself to prevent conflicts.
 
 __do.cleanup=0__ will keep the zip from removing its working directory in /tmp/anykernel (by default) - this can be useful if trying to debug in adb shell whether the patches worked correctly.
 
@@ -137,7 +137,7 @@ Optional supported binaries which may be placed in /tools to enable built-in exp
 * `elftool` (with `unpackelf`) - Sony ELF kernel.elf format support, repacking as ELF for older Sony devices
 * `mkmtkhdr` (with `unpackelf`) - MTK device boot image section headers support for Sony devices
 * `futility` + `chromeos` test keys directory - Google ChromeOS signature support
-* `boot_signer-dexed.jar` + `avb` keys directory - Google Android Verified Boot 1.0 (AVBv1) signature support
+* `boot_signer-dexed.jar` (deprecated) + `avb` keys directory - Google Android Verified Boot 1.0 (AVBv1) custom signature support
 * `rkcrc` - Rockchip KRNL ramdisk image support
 
 Optionally moving ARM builds to tools/arm and putting x86 builds in tools/x86 will enable architecture detection for use with broad, device non-specific zips.
